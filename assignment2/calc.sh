@@ -2,7 +2,6 @@
 #Mandatory assignment 2, task 1.
 
 argument=$1 #Adds first argument after ./calc.sh to $argument
-#shift; #removes first argument, makes for loop more clean later
 if [[ $# -gt 0 ]]; then
     if [[ "$argument" == "S" ]]; then
         sum=0
