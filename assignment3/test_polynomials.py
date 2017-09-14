@@ -19,7 +19,7 @@ def test_adding_polynomial(): #x = 2
 
     a = Polynomial([1,2])
     b = Polynomial([2,1,0])
-    assert Polynomial.__add__(a,b) == [3,3,0]
+    assert Polynomial.__add__(a,b) == [3,3]
 
 def test_sub_polynomial(): #x = 2
     p = Polynomial([5,6,3])
@@ -28,7 +28,7 @@ def test_sub_polynomial(): #x = 2
 
     a = Polynomial([3,1])
     b = Polynomial([2,1,0])
-    assert Polynomial.__sub__(a,b) == [1,0,0]
+    assert Polynomial.__sub__(a,b) == [1,0,]
 
 def test_degree():
     p = Polynomial([1,2,5,4])
