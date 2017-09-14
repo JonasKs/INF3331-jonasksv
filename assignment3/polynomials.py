@@ -25,8 +25,7 @@ class Polynomial:
         """Return the list of coefficients.
         The i-th element of the list should be a_i, meaning that the last
         element of the list is the coefficient of the highest degree term."""
-
-        raise NotImplemented
+        return self.coefficients
 
     def __call__(self, x):
         """Return the value of the polynomial evaluated at the number x"""
@@ -85,8 +84,10 @@ class Polynomial:
 
     def __eq__(self, p):
         """Check if two polynomials have the same coefficients."""
+        if self.coefficients == p.coefficients:
+            return(True)
+        else: return(False)
 
-        raise NotImplemented
 
 def sample_usage():
     p = Polynomial([1, 2, 1]) # 1 + 2x + x^2
