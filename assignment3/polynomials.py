@@ -1,15 +1,26 @@
+from itertools import zip_longest
+import operator
+
 class Polynomial:
 
     def __init__(self, coefficients):
         """coefficients should be a list of numbers with
         the i-th element being the coefficient a_i."""
-        raise NotImplemented
+        #removing last 0's if there are any..Makes all tests actually pass.
+        self.coefficients = coefficients
+        while self.coefficients[-1] == 0:
+            if len(self.coefficients) == 1:
+                break
+            else:
+                self.coefficients.pop()
 
     def degree(self):
         """Return the index of the highest nonzero coefficient.
         If there is no nonzero coefficient, return -1."""
-        raise NotImplemented
-
+        if len(self.coefficients) == 1:
+            return(-1)
+        else:
+            return(len(self.coefficients)-1)
     def coefficients(self):
         """Return the list of coefficients.
         The i-th element of the list should be a_i, meaning that the last
@@ -19,25 +30,39 @@ class Polynomial:
 
     def __call__(self, x):
         """Return the value of the polynomial evaluated at the number x"""
-
-        raise NotImplemented
-
+        value = 0
+        first = 0
+        indexvalue = 0
+        for element in self.coefficients:
+            if indexvalue == 0:
+                first = element
+            else:
+                value += element * (x ** indexvalue)
+            indexvalue+=1
+        return (value+first)
 
     def __add__(self, p):
         """Return the polynomial which is the sum of p and this polynomial
         Should assume p is Polynomial([p]) if p is int.
-
         If p is not an int or Polynomial, should raise ArithmeticError."""
 
-        raise NotImplemented
+        if isinstance(p,Polynomial) or p is int:
+            asd = [x + y for x,y in zip_longest(self.coefficients,p.coefficients,fillvalue=0)]
+            return(asd)
+        else:
+            raise ArithmeticError
 
     def __sub__(self, p):
         """Return the polynomial which is the difference of p and this polynomial
         Should assume p is Polynomial([p]) if p is int.
 
         If p is not an int or Polynomial, should raise ArithmeticError."""
+        if isinstance(p,Polynomial) or p is int:
+            asd = [x - y for x,y in zip_longest(self.coefficients,p.coefficients,fillvalue=0)]
+            return(asd)
+        else:
+            raise ArithmeticError
 
-        raise NotImplemented
 
     def __mul__(self, c):
         """Return the polynomial which is this polynomial multiplied by given integer.
