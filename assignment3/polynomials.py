@@ -1,5 +1,5 @@
 from itertools import zip_longest
-import operator
+
 
 class Polynomial:
 
@@ -66,21 +66,56 @@ class Polynomial:
     def __mul__(self, c):
         """Return the polynomial which is this polynomial multiplied by given integer.
         Should raise ArithmeticError if c is not an int."""
-
-        raise NotImplemented
+        if isinstance(c,int):
+            d = [i * c for i in self.coefficients]
+            return(d)
+        else:
+            raise ArithmeticError
 
 
     def __rmul__(self, c):
         """Return the polynomial which is this polynomial multiplied by some integer"""
-
-        raise NotImplemented
+        if isinstance(c,int):
+            raise ArithmeticError
+        else:
+            d = [i * c for i in self.coefficients]
+            return(d)
 
     def __repr__(self):
         """Return a nice string representation of polynomial.
-
         E.g.: x^6 - 5x^3 + 2x^2 + x - 1
         """
-        raise NotImplemented
+        #[1,2,3,4] ->
+        string = ""
+        if len(self.coefficients) == 0:
+            raise ArithmeticError
+        #for element in range(len(self.coefficients)):
+        #    posisjon = len(self.coefficients)-element-1
+        posisjon = len(self.coefficients)
+        for i in reversed(self.coefficients):
+            posisjon-=1
+            if posisjon == 1:
+                if i < 0:
+                    string += "- "+str(abs(i))+"x "
+                else:
+                    string += "+ "+str(i)+"x "
+            elif posisjon == 0:
+                if i < 0:
+                    string += "- "+str(abs(i))
+                else:
+                    string += "+ "+str(i)
+            elif posisjon == (len(self.coefficients)-1):
+                if i > 0:
+                    string += str(abs(i))+"x^"+str(posisjon)+" "
+                else:
+                    string += "- "+str(abs(i))+"x^"+str(posisjon)+" "
+            else:
+                if i < 0:
+                    string += "- "+str(abs(i))+"x^"+str(posisjon)+" "
+                else:
+                    string += "+ "+str(i)+"x^"+str(posisjon)+" "
+        return(string)
+
 
     def __eq__(self, p):
         """Check if two polynomials have the same coefficients."""
