@@ -94,7 +94,9 @@ class Polynomial:
         posisjon = len(self.coefficients)
         for i in reversed(self.coefficients):
             posisjon-=1
-            if posisjon == 1:
+            if i == 0:
+                string += ""
+            elif posisjon == 1:
                 if i < 0:
                     string += "- "+str(abs(i))+"x "
                 else:
@@ -114,6 +116,7 @@ class Polynomial:
                     string += "- "+str(abs(i))+"x^"+str(posisjon)+" "
                 else:
                     string += "+ "+str(i)+"x^"+str(posisjon)+" "
+        print(string)
         return(string)
 
 
