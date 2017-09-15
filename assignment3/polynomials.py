@@ -116,7 +116,6 @@ class Polynomial:
                     string += "- "+str(abs(i))+"x^"+str(posisjon)+" "
                 else:
                     string += "+ "+str(i)+"x^"+str(posisjon)+" "
-        print(string)
         return(string)
 
 
