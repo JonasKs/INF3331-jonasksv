@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
 class Integrator:
     def integrate(f, a, b, N):
         width = float(b-a)/N
@@ -21,3 +24,4 @@ class Integrator:
         plt.savefig('quadratic_error.png') #Show is the "end of the plot", so this must be before we show the plot.
         plt.show()
         return 0
+

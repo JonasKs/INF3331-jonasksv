@@ -36,3 +36,4 @@ test_integral_of_constant_function()
 test_integral_of_linear_function()
 test_integral_task_4_2()
 test_create_plot()
+
