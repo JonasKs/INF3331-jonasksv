@@ -14,6 +14,5 @@ Install the package by running:
 (I have noticed on one ubuntu machine that the error:
 `ValueError: 'assignment4/*.pyx' doesn't match any files` come when run. Open setup.py and comment out the line with the content:
 `ext_modules=cythonize("assignment4/*.pyx")`  
-Try again)
-
-
+Try again.
+Please note that using cython_integrator functions does not work, since the .pyx file don't work when done this way.)
