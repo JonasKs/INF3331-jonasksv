@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, '../')
 from integrator import Integrator
 from numpy_integrator import numpy_integrator
 from numba_integrator import numba, numba_integrate

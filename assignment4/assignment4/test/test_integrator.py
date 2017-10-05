@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, '../')
 from integrator import Integrator
 from numpy_integrator import numpy_integrator
 from numba_integrator import numba
@@ -62,6 +64,6 @@ def test_create_plot():
     Integrator.plot_dat(f,a,b,N)
 
 test_integral_of_constant_function()
-ttest_integral_of_linear_function()
+test_integral_of_linear_function()
 test_integral_task_42_43_44_45()
-ttest_create_plot()
+test_create_plot()
