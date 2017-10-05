@@ -12,3 +12,19 @@ def numba(f, a, b, N):
             areal += f_jit(a + i*width)
         return (float(areal * width))
     return integrate(a, b, N)
+
+
+#####For testing in integrator_comparison.py
+def numba_integrate(f,a,b,N):
+    """Take a Python function as argument, and maybe call f(x) N times"""
+    f_jit = jit("f8(f8)", nopython=True)(f) #Structure taken from piazza's teacher answer.
+
+    @jit("f8(f8,f8,i8)", nopython=True) #changed from void to f8 from the teachers example on piazza.
+    def integrate(a, b, N): #Passing in my own arguments like before, using the pure python method inside to see the difference.
+        h = float(b-a)/N
+        result = float(0)
+        for i in range(N):
+            result += f_jit((a + h/2.0) + i*h)
+        result = result * h
+        return (result)
+    return integrate(a, b, N)

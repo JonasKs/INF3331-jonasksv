@@ -9,6 +9,16 @@ class Integrator:
         return (areal * width)
 
 
+#####For testing in integrator_comparison.py
+    def midpoint_integrate(f, a, b, N):
+        h = float(b-a)/N
+        result = 0
+        for i in range(N):
+            result += f((a + h/2.0) + i*h)
+        result *= h
+        return result
+
+
     def plot_dat(f, a, b, N):
         n = np.linspace(a,b,N)
         plt.plot(n,f(n),color='blue')
