@@ -8,3 +8,12 @@ Build by running:
 
 Make a package by running:
 `python3 setup.py sdist`
+
+Install the package by running:
+`sudo python3 setup.py install`
+(I have noticed on one ubuntu machine that the error:
+`ValueError: 'assignment4/*.pyx' doesn't match any files` come when run. Open setup.py and comment out the line with the content:
+`ext_modules=cythonize("assignment4/*.pyx")`  
+Try again)
+
+
