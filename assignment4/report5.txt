@@ -1,0 +1,16 @@
+Did as the lecture notes said. I didn't attempt implementing Numpy as the teacher assistant said here it was not needed: https://piazza.com/class/j69h3awskku31y?cid=192
+N is: 30000000
+Pure function time: 9.543579
+Numpy function time: 0.24047600000000102
+Numba function time: 0.13761199999999896
+Cython function time: 0.1599819999999994
+N is: 60000000
+Pure function time: 19.076441000000003
+Numpy function time: 0.4715360000000004
+Numba function time: 0.1658629999999981
+Cython function time: 0.3153790000000001
+N is: 100000000
+Pure function time: 31.43782
+Numpy function time: 0.7820250000000009
+Numba function time: 0.209541999999999
+Cython function time: 0.5226210000000009

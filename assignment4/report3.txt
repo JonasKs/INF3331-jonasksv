@@ -1,16 +1,10 @@
+Numpy was easy to understand and implement.
 N is: 30000000
-Pure function time: 9.499646
-Numpy function time: 0.2796190000000003
-Numba function time: 0.15372499999999967
+Pure function time: 9.543579
+Numpy function time: 0.24047600000000102
 N is: 60000000
-Pure function time: 18.807266
-Numpy function time: 0.5523980000000002
-Numba function time: 0.16433299999999917
+Pure function time: 19.076441000000003
+Numpy function time: 0.4715360000000004
 N is: 100000000
-Pure function time: 31.572460000000003
-Numpy function time: 0.9212220000000002
-Numba function time: 0.20222900000000266
-N is: 100000000
-Pure function time: 33.001138000000005
-Numpy function time: 0.8299900000000022
-Numba function time: 0.21925699999999892
+Pure function time: 31.43782
+Numpy function time: 0.7820250000000009

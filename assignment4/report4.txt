@@ -1,0 +1,14 @@
+I struggled a lot with numba. Changing the @jit("void"(..." to @jit("f8(..." and understanding the reasoning behind took a long time. 
+Had to rebuild some of the code posted by a teacher on Piazza.
+N is: 30000000
+Pure function time: 9.543579
+Numpy function time: 0.24047600000000102
+Numba function time: 0.13761199999999896
+N is: 60000000
+Pure function time: 19.076441000000003
+Numpy function time: 0.4715360000000004
+Numba function time: 0.1658629999999981
+N is: 100000000
+Pure function time: 31.43782
+Numpy function time: 0.7820250000000009
+Numba function time: 0.209541999999999

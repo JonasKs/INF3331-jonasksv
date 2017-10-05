@@ -1,6 +1,7 @@
 from integrator import Integrator
 from numpy_integrator import numpy_integrator
 from numba_integrator import numba
+import cython_integrator
 import matplotlib.pyplot as plt
 import numpy as np
 import time
@@ -22,8 +23,8 @@ def test_integral_of_linear_function():
     assert abs(Integrator.integrate(f, a, b, N) - expected_answer) < 1E-5
 
 
-def test_integral_task_4_2():
-    """approximate the integral of f(x) = x2 from 0 to 1 with 100k steps"""
+def test_integral_task_42_43_44_45():
+    """approximate the integral of f(x) = x2 from 0 to 1 with 100k steps. This is where I generate all my reportX.txt files as well."""
     f = lambda x: x ** 2
     F = lambda x: x ** 3 / 3
     expected_answer = F(1) - F(0)
@@ -38,10 +39,22 @@ def test_integral_task_4_2():
     t6 = time.clock()
     assert abs(numba(f, a, b, N) - expected_answer) < 1E-5 #Numba integrate function
     t7 = time.clock()
+    t8 = time.clock()
+    assert abs(cython_integrator.integrate_f(a,b,N) - expected_answer) < 1E-5 #Cython integrate function
+    t9 = time.clock()
     with open('report3.txt', 'a') as out:
         out.write("N is: {}\nPure function time: {}\n".format(N,(t1-t0))) #Printing result to report3.txt
         out.write("Numpy function time: {}\n".format(t3-t2)) #Printing result to report3.txt
+    with open('report4.txt', 'a') as out:
+        out.write("N is: {}\nPure function time: {}\n".format(N,(t1-t0))) #Printing result to report3.txt
+        out.write("Numpy function time: {}\n".format(t3-t2)) #Printing result to report3.txt
         out.write("Numba function time: {}\n".format(t7-t6)) #Printing result to report3.txt
+    with open('report5.txt', 'a') as out:
+        out.write("N is: {}\nPure function time: {}\n".format(N,(t1-t0))) #Printing result to report3.txt
+        out.write("Numpy function time: {}\n".format(t3-t2)) #Printing result to report3.txt
+        out.write("Numba function time: {}\n".format(t7-t6)) #Printing result to report3.txt
+        out.write("Cython function time: {}\n".format(t9-t8))
+
 def test_create_plot():
     """Just creating the plot"""
     f = lambda x: x ** 3 / 3
@@ -49,6 +62,6 @@ def test_create_plot():
     Integrator.plot_dat(f,a,b,N)
 
 test_integral_of_constant_function()
-test_integral_of_linear_function()
-test_integral_task_4_2()
-#test_create_plot()
+ttest_integral_of_linear_function()
+test_integral_task_42_43_44_45()
+ttest_create_plot()
