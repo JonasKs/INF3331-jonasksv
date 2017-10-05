@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
 class Integrator:
     def integrate(f, a, b, N):
         width = float(b-a)/N
@@ -9,12 +8,13 @@ class Integrator:
             areal += f(a + i*width)
         return (areal * width)
 
+
     def plot_dat(f, a, b, N):
         n = np.linspace(a,b,N)
         plt.plot(n,f(n),color='blue')
         plt.xlabel('x')
         plt.ylabel('y')
-        plt.title('Numerical approximation: Rectangular')
+        plt.title('Plotting')
         for i in range(1,len(n)):
             c = n[i-1]
             d = n[i]
@@ -24,4 +24,3 @@ class Integrator:
         plt.savefig('quadratic_error.png') #Show is the "end of the plot", so this must be before we show the plot.
         plt.show()
         return 0
-
