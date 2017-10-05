@@ -1,0 +1,12 @@
+N is: 30000000
+Pure function time: 9.499646
+Numpy function time: 0.2796190000000003
+Numba function time: 0.15372499999999967
+N is: 60000000
+Pure function time: 18.807266
+Numpy function time: 0.5523980000000002
+Numba function time: 0.16433299999999917
+N is: 100000000
+Pure function time: 31.572460000000003
+Numpy function time: 0.9212220000000002
+Numba function time: 0.20222900000000266
