@@ -10,3 +10,7 @@ N is: 100000000
 Pure function time: 31.572460000000003
 Numpy function time: 0.9212220000000002
 Numba function time: 0.20222900000000266
+N is: 100000000
+Pure function time: 33.001138000000005
+Numpy function time: 0.8299900000000022
+Numba function time: 0.21925699999999892
