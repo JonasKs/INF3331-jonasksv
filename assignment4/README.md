@@ -16,3 +16,15 @@ Install the package by running:
 `ext_modules=cythonize("assignment4/*.pyx")`  
 Try again.
 Please note that using cython_integrator functions does not work, if the .pyx file gives the error above. If something with my package don't work, I'd simply clone it.. Seems like it behaves differently on my debian and my ubuntu VM for some reason)
+
+
+Check if functions works by e.g. writing `python3` to open a python shell and write:
+```
+>>> from assignment4.integrator import Integrator
+>>> f = lambda x: x ** 2
+>>> a,b,N = 0,1,100
+>>> print (Integrator.integrate(f,a,b,N))
+0.32835000000000003
+```
+
+Run tests to check the code. Read reportX.txt to check output of tests. 
