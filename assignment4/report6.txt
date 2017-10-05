@@ -1,0 +1,2 @@
+Lowest N for normal integrate is: 129000.
+Lowest N for mid integrate is: 90700.
