@@ -1,8 +1,10 @@
+### Short description
 The reports have a short description of what I struggled with and the end result. (Everything should be working as intended)
 
 The assignment4 folder have the python files, the test files are in assignment4/test
 
 
+### How to use the packet found in /dist/
 Build by running:
 `python3 setup.py build_ext --inplace`
 
@@ -10,12 +12,7 @@ Make a package by running:
 `python3 setup.py sdist`
 
 Install the package by running:
-`sudo python3 setup.py install`
-(I have noticed on one ubuntu machine that the error:
-`ValueError: 'assignment4/*.pyx' doesn't match any files` come when run. Open setup.py and comment out the line with the content:
-`ext_modules=cythonize("assignment4/*.pyx")`  
-Try again.
-Please note that using cython_integrator functions does not work, if the .pyx file gives the error above. If something with my package don't work, I'd simply clone it.. Seems like it behaves differently on my debian and my ubuntu VM for some reason)
+`sudo python3 setup.py install` or `sudo pip3 install .`
 
 
 Check if functions works by e.g. writing `python3` to open a python shell and write:
@@ -28,3 +25,11 @@ Check if functions works by e.g. writing `python3` to open a python shell and wr
 ```
 
 Run tests to check the code. Read reportX.txt to check output of tests. 
+
+### Note
+Note that if there is any issues with the package itself, I would recommend doing it manually:
+```>git clone URL
+>cd INF3331-jonasksv/assignment4
+>python setup.py build_ext --inplace
+```
+You should now be able to use the code as intended. Test by running the test scripts. ` python3 assignment4/test/test_integrator.py` 
