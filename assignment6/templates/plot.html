@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h1>Change variables to change the plots</h1>
+    <table>
+      <form action="/" method="POST">
+        <tr>
+          <th align="left">CO2 per year plot:</th>
+        </tr>
+        <tr>
+          <td>
+            From year:
+          </td>
+        <td>
+          <input type="text" name="fromyear" placeholder="From year">
+        </td>
+        <td>
+          To year:
+        </td>
+        <td>
+          <input type="text" name="toyear" placeholder="To year">
+        </td>
+      </tr>
+      <tr>
+        <th align="left">CO2 per month from year x to y:</th>
+      </tr>
+      <tr>
+        <td>
+          From year:
+        </td>
+      <td>
+        <input type="text" name="fromyear2" placeholder="From year">
+      </td>
+      <td>
+        To year:
+      </td>
+      <td>
+        <input type="text" name="toyear2" placeholder="To year">
+      </td>
+      </tr>
+      <tr>
+        <td>
+          Y-min:
+        </td>
+        <td>
+          <input type="text" name="ymin" placeholder="Minimum Y value">
+        </td>
+        <td>
+          Y-max:
+        </td>
+          <td>
+            <input type="text" name="ymax" placeholder="Max Y value">
+          </td>
+        </tr>
+        <td>
+          Month:
+        </td>
+          <td>
+            <select name="month">
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+      </form>
+    </table>
+
+
+
+    <div>
+      <img src="data:image/png;base64,{{ co2 }}" width="500">
+    </div>
+    <br>
+    <div>
+      <img src="data:image/png;base64,{{ temp }}" width="500">
+    </div>
+  </body>
+</html>
